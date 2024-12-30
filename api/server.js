@@ -10,14 +10,14 @@ app.use(express.json());
 app.use(cors());
 
 
-const MERCHANT_KEY="96434309-7796-489d-8924-ab56988a6076" //salt key
-const MERCHANT_ID="PGTESTPAYUAT86"
+const MERCHANT_KEY="40f93ce5-27ef-48a9-8b33-b6e00911301b" //salt key
+const MERCHANT_ID="M22V65UE2MMSS"
 
 // const prod_URL = "https://api.phonepe.com/apis/hermes/pg/v1/pay"
 // const prod_URL = "https://api.phonepe.com/apis/hermes/pg/v1/status"
 
-const MERCHANT_BASE_URL="https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay"
-const MERCHANT_STATUS_URL="https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/status"
+const MERCHANT_BASE_URL="https://api.phonepe.com/apis/hermes/pg/v1/pay"
+const MERCHANT_STATUS_URL="https://api.phonepe.com/apis/hermes/pg/v1/status"
 
 const redirectUrl="http://localhost:8000/status"
 
@@ -35,7 +35,7 @@ app.post('/create-order', async (req, res) => {
         merchantId : MERCHANT_ID,
         merchantUserId: name,
         mobileNumber: mobileNumber,
-        amount : amount * 100,
+        amount : amount * 100 ,
         merchantTransactionId: orderId,
         redirectUrl: `${redirectUrl}/?id=${orderId}`,
         redirectMode: 'POST',
